@@ -60,7 +60,7 @@ module.exports = function(kbox) {
         '4': {php: '5.6.4'}
       }
     ),
-    'drupal'
+    'backdrop'
   );
 
   // Load git things
