@@ -55,9 +55,8 @@ module.exports = function(kbox) {
       {},
       backdropMatrix,
       {
-        '2': {php: '5.4.36'},
-        '3': {php: '5.5.20'},
-        '4': {php: '5.6.4'}
+        '2': {php: '5.4.40'},
+        '3': {php: '5.5.24'}
       }
     ),
     'backdrop'
