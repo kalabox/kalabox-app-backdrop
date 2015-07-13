@@ -63,7 +63,7 @@ module.exports = function(kbox) {
   );
 
   // Load git things
-  require('./node_modules/kalabox-plugin-git/create.js')(kbox, 'backdrop');
+  require('./node_modules/kalabox-plugin-git/lib/create.js')(kbox, 'backdrop');
 
   // Task to create kalabox apps
   kbox.tasks.add(function(task) {
