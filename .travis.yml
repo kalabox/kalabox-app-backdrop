@@ -1,4 +1,5 @@
 language: node_js
+sudo: false
 node_js:
 - '0.12'
 - '0.11'
@@ -8,20 +9,20 @@ before_install:
 - chmod +x $HOME/travis-ci.sh
 - cp ci/npm-config.sh $HOME/
 - chmod +x $HOME/npm-config.sh
-- "$HOME/travis-ci.sh before-install"
+- $HOME/travis-ci.sh before-install
 before_script:
-- "$HOME/travis-ci.sh before-script"
+- $HOME/travis-ci.sh before-script
 script:
-- "$HOME/travis-ci.sh script"
+- $HOME/travis-ci.sh script
 after_script:
-- "$HOME/travis-ci.sh after-script"
+- $HOME/travis-ci.sh after-script
 after_success:
-- "$HOME/travis-ci.sh after-success"
+- $HOME/travis-ci.sh after-success
 before_deploy:
-- "$HOME/travis-ci.sh before-deploy"
+- $HOME/travis-ci.sh before-deploy
 - cd built
 after_deploy:
-- "$HOME/travis-ci.sh after-deploy"
+- $HOME/travis-ci.sh after-deploy
 cache:
   directories:
   - node_modules
