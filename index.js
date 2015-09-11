@@ -1,8 +1,12 @@
 'use strict';
 
-var _ = require('lodash');
-
 module.exports = function(kbox) {
+
+  // Npm mods
+  var _ = require('lodash');
+
+  // Pkg.json
+  var pkgJson = require('./package.json');
 
   var backdropMatrix = {
     '1': {
@@ -49,7 +53,7 @@ module.exports = function(kbox) {
   });
 
   // Load php things
-  require('./node_modules/kalabox-plugin-php/create.js')(
+  require(pkgJson.postInstallAssets['kalabox-plugin-php'].create)(
     kbox,
     _.merge(
       {},
@@ -63,7 +67,10 @@ module.exports = function(kbox) {
   );
 
   // Load git things
-  require('./node_modules/kalabox-plugin-git/lib/create.js')(kbox, 'backdrop');
+  require(pkgJson.postInstallAssets['kalabox-plugin-git'].create)(
+    kbox,
+    'backdrop'
+  );
 
   // Task to create kalabox apps
   kbox.tasks.add(function(task) {

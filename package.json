@@ -16,12 +16,18 @@
     "url": "http://github.com/kalabox/kalabox-app-backdrop",
     "email": "mike@kalamuna.com"
   },
+  "scripts": {
+    "postinstall": "node ./scripts/downloadLibs.js"
+  },
+  "postInstallAssets": {
+    "kalabox-plugin-git": {
+      "create": "lib/create.js"
+    },
+    "kalabox-plugin-php": {
+      "create": "create.js"
+    }
+  },
   "dependencies": {
-    "kalabox-plugin-dbenv": "https://github.com/kalabox/kalabox-plugin-dbenv/tarball/master",
-    "kalabox-plugin-drush": "https://github.com/kalabox/kalabox-plugin-drush/tarball/master",
-    "kalabox-plugin-git": "https://github.com/kalabox/kalabox-plugin-git/tarball/master",
-    "kalabox-plugin-php": "https://github.com/kalabox/kalabox-plugin-php/tarball/master",
-    "kalabox-plugin-rsync": "https://github.com/kalabox/kalabox-plugin-rsync/tarball/master",
     "lodash": "^3.7.0"
   },
   "devDependencies": {
