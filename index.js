@@ -59,7 +59,7 @@ module.exports = function(kbox) {
   var phpPluginName = 'kalabox-plugin-php';
   var phpCreatePath = pkgJson.postInstallAssets[phpPluginName].create;
   var phpModPath = path.join('vendor', phpPluginName, phpCreatePath);
-  var phpCreateFile = require('./' + phpModPath);
+  var phpCreateFile = './' + phpModPath;
   require(phpCreateFile)(
     kbox,
     _.merge(
@@ -77,8 +77,8 @@ module.exports = function(kbox) {
   var gitPluginName = 'kalabox-plugin-git';
   var gitCreatePath = pkgJson.postInstallAssets[phpPluginName].create;
   var gitModPath = path.join('vendor', gitPluginName, gitCreatePath);
-  var gitCreateFile = require('./' + gitModPath);
-  require(pkgJson.postInstallAssets['kalabox-plugin-git'].create)(
+  var gitCreateFile = './' + gitModPath;
+  require(gitCreateFile)(
     kbox,
     'backdrop'
   );
