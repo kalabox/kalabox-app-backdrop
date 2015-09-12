@@ -4,6 +4,9 @@ module.exports = function(kbox) {
 
   // Instrinsc modules
   var path = require('path');
+  
+   // Pkg.json
+  var pkgJson = require('./package.json');
 
   var backdropMatrix = {
     '1': {
