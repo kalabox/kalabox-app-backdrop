@@ -24,7 +24,7 @@
       "create": "lib/create.js"
     },
     "kalabox-plugin-php": {
-      "create": "create.js"
+      "create": "lib/create.js"
     }
   },
   "dependencies": {
