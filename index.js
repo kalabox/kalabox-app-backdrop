@@ -2,11 +2,8 @@
 
 module.exports = function(kbox) {
 
-  // Npm mods
-  var _ = require('lodash');
-
-  // Pkg.json
-  var pkgJson = require('./package.json');
+  // Instrinsc modules
+  var path = require('path');
 
   var backdropMatrix = {
     '1': {
@@ -53,7 +50,10 @@ module.exports = function(kbox) {
   });
 
   // Load php things
-  require(pkgJson.postInstallAssets['kalabox-plugin-php'].create)(
+  var phpPluginName = 'kalabox-plugin-php'
+  var phpCreatePath = pkgJson.postInstallAssets[phpPluginName].create;
+  var phpCreateFile = require('./' + path.join('vendor', phpPluginName, phpCreatePath));
+  require(phpCreateFile)(
     kbox,
     _.merge(
       {},
@@ -67,6 +67,9 @@ module.exports = function(kbox) {
   );
 
   // Load git things
+  var gitPluginName = 'kalabox-plugin-git'
+  var gitCreatePath = pkgJson.postInstallAssets[phpPluginName].create;
+  var gitCreateFile = require('./' + path.join('vendor', gitPluginName, gitCreatePath));
   require(pkgJson.postInstallAssets['kalabox-plugin-git'].create)(
     kbox,
     'backdrop'
